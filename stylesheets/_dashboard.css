@@ -17,7 +17,7 @@
 	    padding:0px 30px;
 	    line-height: 80px;
 	    float: right;
-	    color: #3e454c;
+	    color: white;
 	    font-weight: 300;
 	    transition: background-color 0.5s;
 	    &:hover{
