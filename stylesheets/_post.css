@@ -1,0 +1,51 @@
+.post-container{
+	width: 100%;
+	margin: auto;
+		.post-header{
+		    height: 500px;
+		    width: 100%;
+			background:         -webkit-linear-gradient(left, #00c6ff 10%, #0072ff 90%);
+			background:         -o-linear-gradient(left, #00c6ff 10%, #0072ff 90%);
+			background:         linear-gradient(to right, #00c6ff 10%, #0072ff 90%);
+			h1{
+				text-align: center;
+				font-weight: normal;
+				color: white;
+				text-transform: uppercase;
+				vertical-align: middle;
+				line-height: 500px;
+			}
+			span{
+				text-align: center;
+				display: block;
+				font-size: 0.8em;
+		    	color: rgba(255, 255, 255, 0.6);
+		    	position: absolute;
+				width: 100%;
+				line-height: calc(500px - 5em);
+			}
+		}
+	.post-body-container{
+		max-width: 800px;
+		width: 100%;
+		margin: auto;
+		margin-top: 3em;
+		p{
+			text-align: left;
+			line-height: 1.5;
+			font-weight: normal;
+		}
+		h1{
+			padding-bottom: 1em;
+		}
+		pre{
+			width: 100%;
+		}
+	}
+}
+
+.disqus{
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}

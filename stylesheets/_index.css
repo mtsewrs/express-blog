@@ -1,0 +1,143 @@
+
+.home-splash{
+	min-height: 700px;
+	background: url("/images/city_bridge.png") center center;
+	background-size: cover;
+	position: relative;
+	.home-text{
+		    position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    transform: translate(-50%, -50%);
+		h1{
+			color: white;
+			font-size: 3em;
+			text-align: center;
+		}
+		p{
+			margin-top: 1em;
+			margin-bottom: 3em;
+			color: white;
+			font-weight: 300;
+			text-align: center;
+		}
+		.home-splash-links{
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+			display: inline-table;
+			a{
+				font-size: 1em;
+			    padding: 0.5em 1em;
+			    border: 2px solid $red;
+			    border-radius: 500px;
+			    transition: 0.5s background-color;
+			    margin-left: 1em;
+				font-weight: 300;
+			    &:hover{
+			    	background-color: $red;
+			    }
+			}
+			&:first-child{
+				background-color: $red;
+			}
+		}
+	}
+	.fa-angle-down{
+		font-size: 2em;
+		color: white;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		left: 0px;
+		bottom: 0.5em;
+	}
+
+}
+
+.home-main{
+	position: relative;
+	.home-item-content{
+		lost-column: 1/3 0;
+		lost-align: center;
+		margin: auto;
+		height: 600px;
+		&:nth-child(2n){
+			lost-column: 2/3 0;
+		}
+		img{
+			border-radius: 50%;
+			height: 200px;
+		}
+		p{
+			width: 100%;
+			padding-top: 1.5em;
+		}
+		span{
+			color: color($red lightness(70%));
+			font-size: 0.7em;
+			padding-left: 1em;
+			i{
+				color: color($red lightness(70%));
+				padding-right: 0.5em;
+			}
+		}
+		div{
+			width: 100%;
+		}
+	}
+		.home-item-container{
+			max-width: 1200px;
+			width: 98%;
+			height: 600px;
+			border-bottom: 2px solid #E4E4E4;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+.home-portfolio-container{
+				width: 100%;
+				height: 300px;
+				.home-portfolio-item{
+					width: 50%;
+					float: left;
+					lost-align: center;
+					margin: 0px;
+					height: 300px;
+					background-color: #2c3136;
+					transition: background-color 0.4s;
+					&:hover{
+						background-color: $red;
+					}
+					&:hover p{
+						opacity: 1;
+						padding-top: 0.5em;
+					}
+					h3{
+						color: white;
+						width: 100%;
+						text-align: center;
+					}
+					p{
+						width: 100%;
+						text-align: center;
+						padding-top: 1.5em;
+						color: white;
+						opacity: 0;
+						transition-property: padding-top, opacity;
+						transition-duration: 0.2s;
+					}
+					&:nth-child(2){
+						border-left: 4px solid $red;
+					}
+				}
+			}
+			.fa-circle{
+			    position: absolute;
+			    font-size: 1.5em;
+			    width: 100%;
+			    color: $red;
+			    text-align: center;
+			    z-index: 1;
+			    transform: translate(0.1%, -50%);
+			}
+}

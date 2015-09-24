@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+	<% include partials/head %>
+    <link rel="stylesheet" href="/css/prism.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>ouh1ated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="blog-header">
+          <% include partials/header %>
+        </div>
+
+        <div class="post-container">
+            <div class="post-header">
+                <span> <%= post.time.toDateString() %></span>
+                <h1><%= post.title %></h1>
+            </div>
+            <section id="body" class="post-body-container">
+
+            </section>
+            <div class="disqus">
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  var disqus_shortname = 'ewers';
+
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+
+        <% include partials/footer %>
+        <script src="/js/marked.js"></script>
+        <script src="/js/prism.js"></script>
+          <script>
+            marked.setOptions({
+              renderer: new marked.Renderer(),
+              gfm: true,
+              tables: true,
+              breaks: true,
+              pedantic: true,
+              sanitize: true,
+              smartLists: true,
+              smartypants: true
+            });
+            document.getElementById('body').innerHTML = marked('<%- post.body %>');
+          </script>
+    </body>
+</html>

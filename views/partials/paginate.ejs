@@ -1,0 +1,14 @@
+
+                    <ul>
+                    <% if (paginate.hasNextPages( pageCount )) { %>
+                            <li>
+                                <a href="/blog?page=<%= req.query.page += 1 %>">Next</a>
+                            </li>
+                    <% } %>
+                    <% if (paginate.hasPreviousPages) { %>
+                            <li>
+                                <a href="/blog?page=<%= req.query.page -= 1%>">Previous</a>
+                            </li>
+                    <% } %>
+                    </ul>
+

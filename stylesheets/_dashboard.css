@@ -1,0 +1,27 @@
+.dashboard-header{
+    height: 80px;
+    background-color: #3e454c;
+    .logo-container{
+    	lost-column: 1/8 0;
+    	height: 80px;
+    	border-right: 1px solid #585858;
+	    .logo{
+	    	margin-top: 10px;
+		    height: 60px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+	    }
+    }
+    a{
+	    padding:0px 30px;
+	    line-height: 80px;
+	    float: right;
+	    color: white;
+	    font-weight: 300;
+	    transition: background-color 0.5s;
+	    &:hover{
+	    	background-color: rgba(25, 118, 210, 0.11);
+	    }
+    }
+}

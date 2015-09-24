@@ -1,0 +1,21 @@
+footer{
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 60px;
+	height: 150px;
+	p{
+		font-weight: 400;
+		float: left;
+		line-height: 150px;
+	}
+	a{
+		color: #212121;
+		font-size: 1.5em;
+		padding-left: 1em;
+		line-height: 150px;
+	}
+	div{
+		float: right;
+	}
+}

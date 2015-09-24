@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+	<% include partials/head %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header class="dashboard-header">
+            <div class="logo-container">
+                <img src="/images/logo.png" class="logo" alt="logo">
+            </div>
+            <a href="/logout">Logout</a>
+        </header>
+
+        <div class="sidebar-container">
+            <section class="sidebar-menu">
+                <ul>
+                    <li> <a href="/"><i class="fa fa-home"></i></a></li>
+                    <li> <a href="/dashboard"><i class="fa fa-area-chart"></i></a> </li>
+                    <li><a href="/dashboard/new"><i class="fa fa-plus"></i></a> </li>
+                </ul>
+            </section>
+            <section class="sidebar">
+                <h1>Dashboard</h1>
+                <img src="/images/city.jpg" alt="city">
+                <div class="sidebar-stats">
+                    <h3>Number of posts:</h3>
+                   <p><%= posts.length %></p>
+                </div>
+                <div class="sidebar-stats">
+                    <h3>Edit post:</h3>
+                        <% for(var i = 0; i < posts.length; i++) { %>
+                            <p> <a href="/dashboard/edit/<%- posts[i].title %>"><%- posts[i].title %></a></p>
+                        <% } %>
+                </div>
+                <div class="sidebar-stats">
+                </div>
+            </section>
+        </div>
+
+        <% include partials/footer %>
+    </body>
+</html>
