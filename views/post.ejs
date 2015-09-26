@@ -8,12 +8,12 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>ouh1ated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="blog-header">
-          <% include partials/header %>
-        </div>
 
         <div class="post-container">
             <div class="post-header">
+        <div class="blog-header">
+          <% include partials/header %>
+        </div>
                 <span> <%= post.time.toDateString() %></span>
                 <h1><%= post.title %></h1>
             </div>

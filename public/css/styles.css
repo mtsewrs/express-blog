@@ -254,9 +254,9 @@
     margin: auto;
 }
 .post-container .post-header {
-    height: 500px;
     width: 100%;
-    background: linear-gradient(to right, #00c6ff 10%, #0072ff 90%);
+    background-image: url(/images/city-skyline.jpg);
+    background-size: cover;
 }
 .post-container .post-header h1 {
     text-align: center;
@@ -568,7 +568,6 @@
     position: relative;
     width: 100%;
     z-index: 1;
-    background-color: #2c3136;
     padding-top: 1em;
     padding-bottom: 1em;
 }

@@ -2,11 +2,9 @@
 	width: 100%;
 	margin: auto;
 		.post-header{
-		    height: 500px;
 		    width: 100%;
-			background:         -webkit-linear-gradient(left, #00c6ff 10%, #0072ff 90%);
-			background:         -o-linear-gradient(left, #00c6ff 10%, #0072ff 90%);
-			background:         linear-gradient(to right, #00c6ff 10%, #0072ff 90%);
+			background-image: url(/images/city-skyline.jpg);
+			background-size: cover;
 			h1{
 				text-align: center;
 				font-weight: normal;
