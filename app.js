@@ -55,7 +55,7 @@ app.use(function(req, res, next){
         req.user = user;
         delete req.user.password;
         req.session.user = req.user;
-        res.locals.user = req.user
+        res.locals.user = req.user; 
       }
       next();
     });
