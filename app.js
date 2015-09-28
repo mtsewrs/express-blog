@@ -145,8 +145,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
       res.redirect('/dashboard');
     } else{
       res.render('edit', {
-         post: post,
-         postid: req.params.id
+         post: post
       });
     };
 
@@ -215,7 +214,8 @@ app.get('/blog/:id', function(req, res){
       res.redirect('/blog');
     } else{
       res.render('post', {
-         post: post
+         post: post,
+         postid: req.params.id
       });
     };
 
