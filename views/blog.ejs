@@ -25,7 +25,7 @@
 			<% for(var i = 0; i < posts.length; i++) {%>
 			   		<section class="blog-container">
 			   			<div>
-			   				<a href="/blog/post/<%= posts[i].title %>">
+			   				<a href="/blog/<%= posts[i].title %>">
 							    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
 							    <% for(var l = 0;l  < posts[i].tags.length; l++) {%>
 							    	<p><%= posts[i].tags[l] %></p>
