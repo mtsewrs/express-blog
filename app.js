@@ -145,7 +145,8 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
       res.redirect('/dashboard');
     } else{
       res.render('edit', {
-         post: post
+         post: post,
+         postid: req.params.id
       });
     };
 
@@ -155,7 +156,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
 app.post('/dashboard/edit/:id', function (req, res) {
   var updates = { title:  req.body.title.trim(), body: req.body.body, tags: req.body.tags.split(' ')};
   Post.findOneAndUpdate({}, updates, { runValidators: true }, function(err) {
-    res.redirect('/blog/post/' + req.body.title.trim());
+    res.redirect('/blog/' + req.body.title.trim());
   });
 });
 
@@ -208,7 +209,7 @@ app.get('/blog', function(req, res, next){
 
 });
 
-app.get('/blog/post/:id', function(req, res){
+app.get('/blog/:id', function(req, res){
   Post.findOne({title: req.params.id}, function (err, post) {
     if (err) {
       res.redirect('/blog');
