@@ -46,13 +46,13 @@
 .bottom-header div section a {
     padding: 0em 2em;
     float: right;
-    border-radius: 300px;
     transition: 0.5s background-color;
+    background-color: #F44336;
     font-weight: 300;
     line-height: 60px;
 }
 .bottom-header div section a:hover {
-    background-color: #F44336;
+    background-color: #c1352b;
 }
 .hidden {
     bottom: -60px;
@@ -174,12 +174,12 @@
     padding-top: 1.5em;
 }
 .home-main .home-item-content span {
-    color: rgb(247, 119, 110);
+    color: #B6B6B6;
     font-size: 0.7em;
     padding-left: 1em;
 }
 .home-main .home-item-content span i {
-    color: rgb(247, 119, 110);
+    color: #B6B6B6;
     padding-right: 0.5em;
 }
 .home-main .home-item-content div {

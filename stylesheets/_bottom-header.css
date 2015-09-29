@@ -17,12 +17,12 @@
 			a{
 				padding: 0em 2em;
 				float: right;
-			    border-radius: 300px;
 			    transition: 0.5s background-color;
+			    background-color: $red;
 				font-weight: 300;
 				line-height: 60px;
 			    &:hover{
-			    	background-color: $red;
+			    	background-color: #c1352b;
 			    }
 			}
 		}

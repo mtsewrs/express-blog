@@ -74,11 +74,11 @@
 			padding-top: 1.5em;
 		}
 		span{
-			color: color($red lightness(70%));
+			color: #B6B6B6;
 			font-size: 0.7em;
 			padding-left: 1em;
 			i{
-				color: color($red lightness(70%));
+				color: #B6B6B6;
 				padding-right: 0.5em;
 			}
 		}
