@@ -1,7 +1,7 @@
 
 .home-splash{
 	min-height: 700px;
-	background: url("/images/city_bridge.png") center center;
+	background: url("/static/images/city_bridge.png") center center;
 	background-size: cover;
 	position: relative;
 	.home-text{

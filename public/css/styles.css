@@ -75,7 +75,7 @@
 }
 .home-splash {
     min-height: 700px;
-    background: url("/images/city_bridge.png") center center;
+    background: url("/static/images/city_bridge.png") center center;
     background-size: cover;
     position: relative;
 }
@@ -269,7 +269,7 @@
 }
 .post-container .post-header {
     width: 100%;
-    background-image: url(/images/city-skyline.jpg);
+    background-image: url(/static/images/city-skyline.jpg);
     background-size: cover;
 }
 .post-container .post-header h1 {
@@ -720,14 +720,14 @@ body {
     margin: 0px;
     overflow-x: hidden;
 }
-@media screen and (max-width: 420px) {
-    body {
-        font-size: 12px;
-    }
-}
 @media screen and (min-width: 1280px) {
     body {
         font-size: 20px;
+    }
+}
+@media screen and (max-width: 420px) {
+    body {
+        font-size: 12px;
     }
 }
 *, *:before, *:after {

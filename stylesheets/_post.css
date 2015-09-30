@@ -3,7 +3,7 @@
 	margin: auto;
 		.post-header{
 		    width: 100%;
-			background-image: url(/images/city-skyline.jpg);
+			background-image: url(/static/images/city-skyline.jpg);
 			background-size: cover;
 			h1{
 				text-align: center;

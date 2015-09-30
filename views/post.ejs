@@ -3,7 +3,7 @@
     <head>
     <title> <%= post.title %> | Mattias Ewers </title>
 	<% include partials/head %>
-    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -54,7 +54,7 @@
             });
             document.getElementById('body').innerHTML = marked('<%- post.body %>');
           </script>
-        <script src="/js/noframework.waypoints.min.js"></script>
-        <script src="/js/script.js"></script>
+        <script src="/static/js/noframework.waypoints.min.js"></script>
+        <script src="/static/js/script.js"></script>
     </body>
 </html>
