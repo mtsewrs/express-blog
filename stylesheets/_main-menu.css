@@ -40,6 +40,10 @@
 			    float: right;
 			}
 		}
+		.fa-angle-left{
+		    margin-right: 0.5em;
+		    font-size: 1.2em;
+		}
 	}
 }
 .link {

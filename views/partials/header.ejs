@@ -8,6 +8,12 @@
 	</div>
 		<img src="/images/logo_white.png" alt="logo">
 	<div class="header-container">
-		<a href="/resume.pdf" class="resume-button">Resumé</a>
+		<%if (url === '') { %>
+			<a href="/resume.pdf" class="resume-button">Resumé</a>
+		<% } else if(url === 'blog'){ %>
+			<a href="/blog" class="resume-button">Blog</a>
+		<% } else{ %>
+			<a href="/blog" class="resume-button"><i class="fa fa-angle-left"></i>Back</a>
+		<% } %>
 	</div>
 </header>

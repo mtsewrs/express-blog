@@ -4,7 +4,17 @@
 			<img src="/images/logo_white.png" alt="logo">
 		</section>
 		<section>
-			<a href="/">resumé</a>
+			<% if (url === '' || url === 'blog') { %>
+				<a href="/">Portfolio</a>
+				<a href="/blog">Blog</a>
+				<a href="/">Home</a>
+			<% } else { %>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=mattiasewers.com/blog/<%= post.url %>"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/home?status=<%= post.title %>%20-%20www.mattiasewers.com/blog/<%- post.url %>"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url=www.mattiasewers.com/blog/<%- post.url %>&title=<%- post.title %>&summary=&source="><i class="fa fa-linkedin"></i></a>
+
+				<span>share</span>
+			<% } %>
 		</section>
 	</div>
 </header>

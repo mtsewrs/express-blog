@@ -24,6 +24,19 @@
 			    &:hover{
 			    	background-color: #c1352b;
 			    }
+			    i{
+			    	font-size: 1.1em;
+			    }
+			}
+			span{
+				padding: 0em 2em;
+				float: right;
+			    transition: 0.5s background-color;
+			    background-color: $red;
+				font-weight: 300;
+				line-height: 60px;
+				color: white;
+				font-size: 0.8em;
 			}
 		}
 	}

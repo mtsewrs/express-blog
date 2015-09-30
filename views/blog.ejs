@@ -8,10 +8,13 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>ouh1ated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+		<% include partials/bottomHeader %>
+
         <div class="blog-header" style="background-color: #2c3136">
 			<% include partials/header %>
 			<div class="blog-intro">
-				<h1>Welcome to my blog!</h1>
+				<h1 id="waypoint">Welcome to my blog!</h1>
 				<p>I write mostly about code news related to the web and new stuff that I learn but once in a while I'll write about something fun.</p>
 			</div>
 		</div>
@@ -25,7 +28,7 @@
 			<% for(var i = 0; i < posts.length; i++) {%>
 			   		<section class="blog-container">
 			   			<div>
-			   				<a href="/blog/<%= posts[i].title %>">
+			   				<a href="/blog/<%= posts[i].url %>">
 							    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
 							    <% for(var l = 0;l  < posts[i].tags.length; l++) {%>
 							    	<p><%= posts[i].tags[l] %></p>
@@ -38,5 +41,7 @@
 		<% include partials/paginate %>
 
         <% include partials/footer %>
+        <script src="/js/noframework.waypoints.min.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

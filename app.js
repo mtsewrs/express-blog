@@ -28,6 +28,7 @@ var User = mongoose.model('User', new Schema({
 
 var PostSchema = new Schema({
   title: String,
+  url: String,
   body: String,
   time : { type : Date, default: Date.now },
   tags: [String],
@@ -121,7 +122,8 @@ app.locals = {
 app.get('/', function(req, res){
   Post.find({}, function (err, posts) {
     res.render('index', {
-       posts: posts
+       posts: posts,
+       url: ''
     });
   });
 });
@@ -154,6 +156,7 @@ app.get('/dashboard/new', requireLogin, function (req, res) {
 app.post('/dashboard/new', function (req, res) {
   var post = new Post({
     title: req.body.title,
+    url: req.body.title.replace(/\s+/g, ''),
     body: req.body.body.replace(/(?:\r\n)/g, '\\n\\n'),
     tags: req.body.tags.split(' ')
   });
@@ -162,13 +165,13 @@ app.post('/dashboard/new', function (req, res) {
       var err = 'Something went wrong';
       res.render('newpost', {error: error});
     } else{
-      res.redirect('/blog/post/' + req.body.title);
+      res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
     };
   });
 });
 
 app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
-  Post.findOne({title: req.params.id}, function (err, post) {
+  Post.findOne({url: req.params.id}, function (err, post) {
     if (err) {
       res.redirect('/dashboard');
     } else{
@@ -181,7 +184,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
 });
 
 app.post('/dashboard/edit/:id', function (req, res) {
-  var updates = { title:  req.body.title.trim(), body: req.body.body, tags: req.body.tags.split(' ')};
+  var updates = { url: req.body.title.replace(/\s+/g, ''), title:  req.body.title.trim(), body: req.body.body, tags: req.body.tags.split(' ')};
   Post.findOneAndUpdate({}, updates, { runValidators: true }, function(err) {
     res.redirect('/blog/' + req.body.title.trim());
   });
@@ -219,7 +222,8 @@ app.get('/blog', function(req, res, next){
           posts: posts,
           pageCount: pageCount,
           itemCount: itemCount,
-          req: req
+          req: req,
+          url: 'blog'
         });
       },
       json: function() {
@@ -237,13 +241,13 @@ app.get('/blog', function(req, res, next){
 });
 
 app.get('/blog/:id', function(req, res){
-  Post.findOne({title: req.params.id}, function (err, post) {
-    if (err) {
+  Post.findOne({url: req.params.id}, function (err, post) {
+    if (!post) {
       res.redirect('/blog');
     } else{
       res.render('post', {
          post: post,
-         postid: req.params.id
+         url: post.url
       });
     };
 

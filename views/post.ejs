@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="">
     <head>
-    <title> <%= postid %> | Mattias Ewers </title>
+    <title> <%= post.title %> | Mattias Ewers </title>
 	<% include partials/head %>
     <link rel="stylesheet" href="/css/prism.css">
     </head>
@@ -10,13 +10,15 @@
             <p class="browserupgrade">You are using an <strong>ouh1ated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <% include partials/bottomHeader %>
+
         <div class="post-container">
             <div class="post-header">
               <div class="blog-header">
                 <% include partials/header %>
               </div>
                 <span> <%= post.time.toDateString() %></span>
-                <h1><%= post.title %></h1>
+                <h1 id="waypoint"><%= post.title %></h1>
             </div>
             <section id="body" class="post-body-container">
 
@@ -52,5 +54,7 @@
             });
             document.getElementById('body').innerHTML = marked('<%- post.body %>');
           </script>
+        <script src="/js/noframework.waypoints.min.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

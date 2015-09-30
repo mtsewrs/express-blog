@@ -54,6 +54,19 @@
 .bottom-header div section a:hover {
     background-color: #c1352b;
 }
+.bottom-header div section a i {
+    font-size: 1.1em;
+}
+.bottom-header div section span {
+    padding: 0em 2em;
+    float: right;
+    transition: 0.5s background-color;
+    background-color: #F44336;
+    font-weight: 300;
+    line-height: 60px;
+    color: white;
+    font-size: 0.8em;
+}
 .hidden {
     bottom: -60px;
 }
@@ -172,6 +185,7 @@
 .home-main .home-item-content p {
     width: 100%;
     padding-top: 1.5em;
+    line-height: 1.5;
 }
 .home-main .home-item-content span {
     color: #B6B6B6;
@@ -340,6 +354,10 @@
     font-weight: 400;
     text-transform: uppercase;
     float: right;
+}
+.header .header-container .fa-angle-left {
+    margin-right: 0.5em;
+    font-size: 1.2em;
 }
 .link {
     outline: none;
@@ -730,7 +748,7 @@ h2 {
 }
 h3 {
     font-weight: 300;
-    font-size: 1.3em;
+    font-size: 1.7em;
 }
 li {
     list-style: none;
