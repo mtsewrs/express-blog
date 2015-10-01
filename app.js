@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var session = require('client-sessions');
 var paginate = require('express-paginate');
 var NodeCache = require( "node-cache" );
-var myCache = new NodeCache();
+var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 
 var Schema = mongoose.Schema;
 
