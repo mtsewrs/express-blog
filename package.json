@@ -39,6 +39,7 @@
   "devDependencies": {
     "flightplan": "^0.6.4",
     "fly": "^0.8.3",
-    "gulp-imagemin": "^2.3.0"
+    "gulp-imagemin": "^2.3.0",
+    "node-cache": "^3.0.0"
   }
 }

@@ -8,6 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('client-sessions');
 var paginate = require('express-paginate');
+var NodeCache = require( "node-cache" );
+var myCache = new NodeCache();
 
 var Schema = mongoose.Schema;
 
