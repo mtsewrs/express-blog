@@ -60,13 +60,13 @@ app.use(helmet.csp({
 
   // Set to true if you want to blindly set all headers: Content-Security-Policy,
   // X-WebKit-CSP, and X-Content-Security-Policy.
-  setAllHeaders: false,
+  setAllHeaders: true,
 
   // Set to true if you want to disable CSP on Android.
   disableAndroid: false,
 
   // Set to true if you want to force buggy CSP in Safari 5.1 and below.
-  safari5: false
+  safari5: true
 }));
 
 app.use(session({
