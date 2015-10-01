@@ -49,25 +49,7 @@ app.use(helmet.frameguard());
 app.use(helmet.xssFilter({ setOnOldIE: true }));
 app.use(helmet.hidePoweredBy());
 app.use(helmet.noSniff());
-app.use(helmet.csp({
-
-  // Specify directives as normal
-  sandbox: ['allow-forms', 'allow-scripts'],
-  reportUri: '/report-violation',
-
-  // Set to true if you only want browsers to report errors, not block them
-  reportOnly: false,
-
-  // Set to true if you want to blindly set all headers: Content-Security-Policy,
-  // X-WebKit-CSP, and X-Content-Security-Policy.
-  setAllHeaders: true,
-
-  // Set to true if you want to disable CSP on Android.
-  disableAndroid: false,
-
-  // Set to true if you want to force buggy CSP in Safari 5.1 and below.
-  safari5: true
-}));
+app.use(helmet.xframe('allow-from', '*.disqus.com'));
 
 app.use(session({
   cookieName: "session",
