@@ -160,7 +160,8 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
       res.redirect('/dashboard');
     } else{
       res.render('edit', {
-         post: post
+         post: post,
+         tags: post.tags.join(' ')
       });
     };
 
