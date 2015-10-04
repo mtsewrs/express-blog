@@ -156,7 +156,7 @@ app.post('/dashboard/new', function (req, res) {
 
 app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
   Post.findOne({url: req.params.id}, function (err, post) {
-    if (err) {
+    if (post) {
       res.redirect('/dashboard');
     } else{
       res.render('edit', {
