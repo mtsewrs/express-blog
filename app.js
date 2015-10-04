@@ -9,9 +9,15 @@ var bodyParser = require('body-parser');
 var session = require('client-sessions');
 var paginate = require('express-paginate');
 var NodeCache = require( "node-cache" );
+var ExpressBrute = require('express-brute');
+var MemcachedStore = require('express-brute-memcached');
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 
 var Schema = mongoose.Schema;
+var store = new MemcachedStore(['127.0.0.1'], {
+  prefix: 'NoConflicts'
+});
+var bruteforce = new ExpressBrute(store);
 
 
 
@@ -175,10 +181,10 @@ app.post('/dashboard/edit/:id', function (req, res) {
   });
 });
 
-app.post('/login', function(req, res){
+app.post('/login', bruteforce.prevent, function(req, res){
   User.findOne({userName: req.body.userName}, function (err, user) {
     if(!user){
-      res.render('login', {error: 'Invalid'})
+      res.redirect('/');
     } else{
       if (req.body.password === user.password){
         req.session.user = user;
