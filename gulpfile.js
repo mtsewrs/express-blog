@@ -1,12 +1,9 @@
 var postcss = require('gulp-postcss');
 var gulp = require('gulp');
 var autoprefixer = require('autoprefixer');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
+var minifyCss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
 
-var paths = {
-  css: './stylsheets/*.css'
-};
 
 gulp.task('css', function () {
     var processors = [
@@ -18,17 +15,14 @@ gulp.task('css', function () {
     ];
     return gulp.src('./stylesheets/styles.css')
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./public/css/'));
+        .pipe(gulp.dest('./stylesheets/dist'));
 });
 
-gulp.task('img', function () {
-    return gulp.src('./img/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest('./public/images/'));
+
+gulp.task('minify-css', function() {
+  return gulp.src('./stylesheets/dist/styles.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./public/css/'));
 });
 
 
@@ -38,4 +32,4 @@ gulp.task('watch', function() {
   gulp.watch('./stylesheets/**.css', ['css']);
 });
 
-gulp.task('default', ['watch', 'css']);
+gulp.task('default', ['watch', 'css', 'minify-css']);
