@@ -171,7 +171,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
 app.post('/dashboard/edit/:id', function (req, res) {
   var updates = { url: req.body.title.replace(/\s+/g, ''), title:  req.body.title.trim(), body: req.body.body, tags: req.body.tags.split(' ')};
   Post.findOneAndUpdate({}, updates, { runValidators: true }, function(err) {
-    res.redirect('/blog/' + req.body.title.trim());
+    res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
   });
 });
 
