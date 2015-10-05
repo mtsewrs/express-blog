@@ -1,14 +1,13 @@
 <!doctype html>
 <html class="no-js" lang="">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Error</title>
+		<% include partials/head %>
     </head>
     <body>
 
-	<h1><%= message %></h1>
-	<p><%= error %></p>
+		<h1><%= req.path + ' ' + message %></h1>
+		<p><%= error %></p>
 
 
     </body>
