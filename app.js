@@ -10,16 +10,20 @@ var session = require('client-sessions');
 var paginate = require('express-paginate');
 var NodeCache = require( "node-cache" );
 var ExpressBrute = require('express-brute');
-var MemcachedStore = require('express-brute-memcached');
+var MongoStore = require('express-brute-mongo');
+var MongoClient = require('mongodb').MongoClient;
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 
 var Schema = mongoose.Schema;
-var store = new MemcachedStore(['127.0.0.1'], {
-  prefix: 'NoConflicts'
+
+var store = new MongoStore(function (ready) {
+  MongoClient.connect('mongodb://localhost/db', function(err, db) {
+    if (err) throw err;
+    ready(db.collection('bruteforce-store'));
+  });
 });
+
 var bruteforce = new ExpressBrute(store);
-
-
 
 mongoose.connect('mongodb://localhost/db', function(err){
   if (err) {
