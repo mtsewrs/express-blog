@@ -74,7 +74,9 @@
     bottom: 0px;
 }
 .home-splash {
+    height: 100vh;
     min-height: 700px;
+    width: 100%;
     background: url("/static/images/city_bridge.png") center center;
     background-size: cover;
     position: relative;
@@ -299,8 +301,12 @@
     text-align: left;
     line-height: 1.5;
     font-weight: normal;
+    padding-bottom: 1em;
 }
 .post-container .post-body-container h1 {
+    padding-bottom: 1em;
+}
+.post-container .post-body-container h2 {
     padding-bottom: 1em;
 }
 .post-container .post-body-container pre {

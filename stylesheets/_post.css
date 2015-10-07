@@ -32,8 +32,12 @@
 			text-align: left;
 			line-height: 1.5;
 			font-weight: normal;
+			padding-bottom: 1em;
 		}
 		h1{
+			padding-bottom: 1em;
+		}
+		h2{
 			padding-bottom: 1em;
 		}
 		pre{

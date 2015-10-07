@@ -29,7 +29,7 @@ gulp.task('minify-css', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch('./stylesheets/**.css', ['css']);
+  gulp.watch('./stylesheets/**.css', ['css', 'minify-css']);
 });
 
 gulp.task('default', ['watch', 'css', 'minify-css']);

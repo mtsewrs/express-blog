@@ -9,9 +9,9 @@
 				<a href="/blog">Blog</a>
 				<a href="/">Home</a>
 			<% } else { %>
-				<a href="https://www.facebook.com/sharer/sharer.php?u=mattiasewers.com/blog/<%= post.url %>"><i class="fa fa-facebook"></i></a>
-				<a href="https://twitter.com/home?status=<%= post.title %>%20-%20www.mattiasewers.com/blog/<%- post.url %>"><i class="fa fa-twitter"></i></a>
-				<a href="https://www.linkedin.com/shareArticle?mini=true&url=www.mattiasewers.com/blog/<%- post.url %>&title=<%- post.title %>&summary=&source="><i class="fa fa-linkedin"></i></a>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=mattiasewers.com/blog/<%= post.url %>" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/home?status=<%= post.title %>%20-%20http://mattiasewers.com/blog/<%- post.url %>" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url=www.mattiasewers.com/blog/<%- post.url %>&title=<%- post.title %>&summary=&source=" target="_blank"><i class="fa fa-linkedin"></i></a>
 
 				<span>share</span>
 			<% } %>

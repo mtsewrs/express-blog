@@ -13,7 +13,9 @@ var ExpressBrute = require('express-brute');
 var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
+var showdown  = require('showdown');
 
+var converter = new showdown.Converter();
 var Schema = mongoose.Schema;
 
 var store = new MongoStore(function (ready) {
@@ -242,7 +244,8 @@ app.get('/blog/:id', function(req, res){
     } else{
       res.render('post', {
          post: post,
-         url: post.url
+         url: post.url,
+         article: converter.makeHtml(post.body)
       });
     };
 
