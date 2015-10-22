@@ -103,7 +103,7 @@ app.set('view engine', 'ejs');
 
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(paginate.middleware(3, 50));
+app.use(paginate.middleware(2, 50));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

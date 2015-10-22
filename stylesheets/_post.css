@@ -28,6 +28,8 @@
 		width: 100%;
 		margin: auto;
 		margin-top: 3em;
+		padding-left: 1em;
+		padding-right: 1em;
 		p{
 			text-align: left;
 			line-height: 1.5;
@@ -50,4 +52,6 @@
 	max-width: 1200px;
 	width: 100%;
 	margin: auto;
+	padding-left: 1em;
+	padding-right: 1em;
 }

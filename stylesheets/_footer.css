@@ -4,6 +4,7 @@ footer{
 	margin: auto;
 	margin-bottom: 60px;
 	height: 150px;
+	padding: 0em 1em;
 	p{
 		font-weight: 400;
 		float: left;

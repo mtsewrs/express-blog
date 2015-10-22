@@ -7,14 +7,38 @@
 	transition: bottom 0.3s;
 	z-index: 1;
 	div{
-		lost-center: 1200px;
+		max-width: 1200px;
+		width: 100%;
+		margin: auto;
+		@media screen and (min-width: 600px) {
+			section{
+				width: 50%;
+			}
+		}
 		section{
-			lost-column: 1/2;
+			width: 100%;
+			float: right;
+			&:first-child{
+				float: left;
+			}
+			@media screen and (min-width: 600px) {
+				img{
+					height: 40px;
+					margin: 10px 1em;
+					display: block;
+				}
+			}
 			img{
-				height: 40px;
-				margin: 10px 0px;
+				display: none;
+			}
+			@media screen and (min-width: 600px) {
+				a{
+					width: initial;
+				}
 			}
 			a{
+				width: 33.33%;
+				text-align: center;
 				padding: 0em 2em;
 				float: right;
 			    transition: 0.5s background-color;
