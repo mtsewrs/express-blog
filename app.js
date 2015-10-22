@@ -2,6 +2,7 @@ var express = require('express');
 var helmet = require('helmet');
 var mongoose = require('mongoose');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -14,6 +15,8 @@ var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 var showdown  = require('showdown');
+var processImage = require('express-processimage'); 
+
 
 var converter = new showdown.Converter();
 var Schema = mongoose.Schema;
@@ -54,8 +57,8 @@ PostSchema.plugin(require('mongoose-paginate'));
 var Post = mongoose.model('Post', PostSchema);
 
 var app = express();
+app.use(processImage({root: root}))
 app.use(helmet());
-
 app.use(helmet.noCache({ noEtag: true }));
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter({ setOnOldIE: true }));
@@ -156,6 +159,7 @@ app.post('/dashboard/new', function (req, res) {
     body: req.body.body.replace(/(?:\r\n)/g, '\\n\\n'),
     tags: req.body.tags.split(' ')
   });
+
   post.save(function (err) {
     if (err) {
       var err = 'Something went wrong';
@@ -164,7 +168,10 @@ app.post('/dashboard/new', function (req, res) {
       res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
     };
   });
+
 });
+
+
 
 app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
   Post.findOne({url: req.params.id}, function (err, post) {
