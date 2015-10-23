@@ -4,46 +4,45 @@
 	height: 122px;
 	img{
 		height: 122px;
-	    left: 50%;
-	    position: absolute;
-	    transform: translateX(-50%);
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 	}
-
-	.header-container{
-		height: 122px;
-		float: right;
-		.resume-button{
-				font-size: 0.8em;
-			    padding: 1em 2em;
-			    border: 2px solid $red;
-			    border-radius: 500px;
-			    transition: 0.5s background-color;
-			    margin-right: 1em;
-				font-weight: 300;
-				line-height: 122px;
-			    &:hover{
-			    	background-color: $red;
-			    }
+	@media screen and (min-width: 601px) {
+		img{
+			height: 122px;
+			position: relative;
+			left: 0%;
+			transform: translateX(-0%);
+			margin-left: 1.5em;
 		}
-		&:first-child{
-			float: left;
-		}
-		.menu{
-		    height: 100px;
-		    float: right;
-			.column{
-			    text-align: center;
-			    padding: 0px 2em;
-			    line-height: 122px;
-			    font-weight: 400;
-			    text-transform: uppercase;
+		.header-container{
+			height: 122px;
+			float: right;
+			display: block;
+			&:first-child{
+				float: right;
+			}
+			.menu{
+			    height: 100px;
 			    float: right;
+				.column{
+				    text-align: center;
+				    padding: 0px 2em;
+				    line-height: 122px;
+				    font-weight: 400;
+				    text-transform: uppercase;
+				    float: right;
+				}
+			}
+			.fa-angle-left{
+			    margin-right: 0.5em;
+			    font-size: 1.2em;
 			}
 		}
-		.fa-angle-left{
-		    margin-right: 0.5em;
-		    font-size: 1.2em;
-		}
+	}
+	.header-container{
+		display: none;
 	}
 }
 .link {

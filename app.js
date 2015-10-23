@@ -1,7 +1,10 @@
+'use strict'
+
 var express = require('express');
 var helmet = require('helmet');
 var mongoose = require('mongoose');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -14,6 +17,8 @@ var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 var showdown  = require('showdown');
+var processImage = require('express-processimage');
+
 
 var converter = new showdown.Converter();
 var Schema = mongoose.Schema;
@@ -46,7 +51,9 @@ var PostSchema = new Schema({
   body: String,
   time : { type : Date, default: Date.now },
   tags: [String],
-  id: Number
+  id: Number,
+  image_url: String,
+  image_url_large: String
 });
 
 PostSchema.plugin(require('mongoose-paginate'));
@@ -54,8 +61,8 @@ PostSchema.plugin(require('mongoose-paginate'));
 var Post = mongoose.model('Post', PostSchema);
 
 var app = express();
+app.use(processImage({root: root}))
 app.use(helmet());
-
 app.use(helmet.noCache({ noEtag: true }));
 app.use(helmet.frameguard());
 app.use(helmet.xssFilter({ setOnOldIE: true }));
@@ -101,10 +108,10 @@ function requireLogin (req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
+app.use(processImage({root: path.join(__dirname, '/public')}))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(paginate.middleware(3, 50));
-app.use(logger('dev'));
+app.use(paginate.middleware(2, 50));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -154,8 +161,11 @@ app.post('/dashboard/new', function (req, res) {
     title: req.body.title,
     url: req.body.title.replace(/\s+/g, ''),
     body: req.body.body.replace(/(?:\r\n)/g, '\\n\\n'),
-    tags: req.body.tags.split(' ')
+    tags: req.body.tags.split(' '),
+    image_url: `https://unsplash.it/1080/720?image=${req.body.url}`,
+    image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
   });
+
   post.save(function (err) {
     if (err) {
       var err = 'Something went wrong';
@@ -164,16 +174,22 @@ app.post('/dashboard/new', function (req, res) {
       res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
     };
   });
+
 });
+
+
 
 app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
   Post.findOne({url: req.params.id}, function (err, post) {
     if (!post) {
       res.redirect('/dashboard');
     } else{
+      let url = post.image_url.split('');
+      var id = url.map(function(word){ if(!isNaN(word)) return word}).join('');
       res.render('edit', {
          post: post,
-         tags: post.tags.join(' ')
+         tags: post.tags.join(' '),
+         url: id.substr(id.length - 3)
       });
     };
 
@@ -181,7 +197,14 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
 });
 
 app.post('/dashboard/edit/:id', function (req, res) {
-  var updates = { url: req.body.title.replace(/\s+/g, ''), title:  req.body.title.trim(), body: req.body.body, tags: req.body.tags.split(' ')};
+  var updates = {
+    url: req.body.title.replace(/\s+/g, ''),
+    title:  req.body.title.trim(),
+    body: req.body.body,
+    tags: req.body.tags.split(' '),
+    image_url: `https://unsplash.it/1080/720?image=${req.body.url}`,
+    image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
+  };
   Post.findOneAndUpdate({}, updates, { runValidators: true }, function(err) {
     res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
   });

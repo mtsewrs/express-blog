@@ -20,26 +20,30 @@
 		</div>
 
         <div class="blog">
+        			<% for(var i = 0; i < posts.length; i++) { %>
 			   		<section class="blog-container">
-			   			<div>
-						    <h1> Recent Posts </h1>
-					     </div>
+		              <figure class="has-light-mask m-b-0 image-effect">
+		              	<!-- Hero image HERE! -->
+		                <img src="<%= posts[i].image_url %>" alt="Article image">
+		              </figure>
 			   		</section>
-			<% for(var i = 0; i < posts.length; i++) {%>
-			   		<section class="blog-container">
-			   			<div>
-			   				<a href="/blog/<%= posts[i].url %>">
-							    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
-							    <% for(var l = 0;l  < posts[i].tags.length; l++) {%>
-							    	<p><%= posts[i].tags[l] %></p>
-							    <% } %>
-						    </a>
-					     </div>
-			   		</section>
-			<% } %>
+					<section class="blog-container">
+					   			<div>
+					   				<span> New </span>
+					   				<a href="/blog/<%= posts[i].url %>">
+									    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
+									    <% for(var l = 0; l  < 1; l++) {%>
+									    	<p class="fa fa-tags"><%= posts[i].tags[l] %></p>
+									    <% } %>
+									    <p class="fa fa-clock-o"><%= posts[i].time.toDateString() %></p>
+								    </a>
+							     </div>
+					</section>
+					<% } %>
 		</div>
-		<% include partials/paginate %>
 
+
+		<% include partials/paginate %>
         <% include partials/footer %>
         <script src="/static/js/noframework.waypoints.min.js"></script>
         <script src="/static/js/script.js"></script>
