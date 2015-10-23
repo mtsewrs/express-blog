@@ -24,12 +24,12 @@
 			   		<section class="blog-container">
 		              <figure class="has-light-mask m-b-0 image-effect">
 		              	<!-- Hero image HERE! -->
-		                <img src="https://unsplash.it/1080/720/?random" alt="Article thumbnail" class="img-responsive">
+		                <img src="<%= posts[i].image_url %>" alt="Article image">
 		              </figure>
 			   		</section>
 					<section class="blog-container">
 					   			<div>
-					   				<span> Featured post </span>
+					   				<span> New </span>
 					   				<a href="/blog/<%= posts[i].url %>">
 									    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
 									    <% for(var l = 0; l  < 1; l++) {%>

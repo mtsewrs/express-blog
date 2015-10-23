@@ -23,6 +23,7 @@
 max-width: 1200px;
 margin: auto;
 margin-top: 2em;
+height: 800px;
 	@media screen and (min-width: 800px) {
 		.blog-container{
 			height: 400px;
@@ -107,5 +108,18 @@ margin-top: 2em;
 			color: white;
 		}
 	}
+	}
+}
+
+.paginate{
+	max-width: 1200px;
+	margin: auto;
+	.next{
+		float: right;
+		width: 50%;
+		text-align: center;
+	}
+	a{
+		color: #212121;
 	}
 }

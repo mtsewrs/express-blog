@@ -3,15 +3,41 @@
 	margin: auto;
 		.post-header{
 		    width: 100%;
-			background-image: url(/static/images/city-skyline.jpg);
-			background-size: cover;
+		    min-height: 700px;
+		    @media screen and (min-width: 600px) {
+		    	.overlay{
+		    		padding-bottom: 48.7%;
+		    		height: inherit;
+		    	}
+		    }
+		    .overlay{
+			    position: absolute;
+			    background-color: #2C3136;
+			    width: 100%;
+			    padding-bottom: 0%;
+			    height: 100vh;
+			    z-index: 1;
+			    opacity: 0.9;
+			    text-align: center;
+		    }
+		    .hero-img{
+		    	position: absolute;
+		    	width: 100%;
+		    	max-height: 700px;
+		    	height: 100%;
+		    }
+/*			background-image: url(/static/images/city-skyline.jpg);
+			background-size: cover;*/
 			h1{
 				text-align: center;
 				font-weight: normal;
 				color: white;
 				text-transform: uppercase;
 				vertical-align: middle;
-				line-height: 500px;
+				line-height: 700px;
+				position: absolute;
+				width: 100%;
+				z-index: 1;
 			}
 			span{
 				text-align: center;
@@ -20,7 +46,8 @@
 		    	color: rgba(255, 255, 255, 0.6);
 		    	position: absolute;
 				width: 100%;
-				line-height: calc(500px - 5em);
+				line-height: calc(700px - 5em);
+				z-index: 1;
 			}
 		}
 	.post-body-container{

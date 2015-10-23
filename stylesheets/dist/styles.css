@@ -271,16 +271,36 @@
 }
 .post-container .post-header {
     width: 100%;
-    background-image: url(/static/images/city-skyline.jpg);
-    background-size: cover;
+    min-height: 700px;
 }
+.post-container .post-header .overlay {
+    position: absolute;
+    background-color: #2C3136;
+    width: 100%;
+    padding-bottom: 0%;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0.9;
+    text-align: center;
+}
+.post-container .post-header .hero-img {
+    position: absolute;
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+}
+/*			background-image: url(/static/images/city-skyline.jpg);
+			background-size: cover;*/
 .post-container .post-header h1 {
     text-align: center;
     font-weight: normal;
     color: white;
     text-transform: uppercase;
     vertical-align: middle;
-    line-height: 500px;
+    line-height: 700px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 .post-container .post-header span {
     text-align: center;
@@ -289,7 +309,8 @@
     color: rgba(255, 255, 255, 0.6);
     position: absolute;
     width: 100%;
-    line-height: calc(500px - 5em);
+    line-height: calc(700px - 5em);
+    z-index: 1;
 }
 .post-container .post-body-container {
     max-width: 800px;
@@ -313,6 +334,12 @@
 }
 .post-container .post-body-container pre {
     width: 100%;
+}
+@media screen and (min-width: 600px) {
+    .post-container .post-header .overlay {
+        padding-bottom: 48.7%;
+        height: inherit;
+    }
 }
 .disqus {
     max-width: 1200px;
@@ -618,6 +645,7 @@
     max-width: 1200px;
     margin: auto;
     margin-top: 2em;
+    height: 800px;
 }
 .blog .blog-container {
     float: left;
@@ -712,6 +740,18 @@
     .blog .blog-container:nth-child(3) {
         float: right;
     }
+}
+.paginate {
+    max-width: 1200px;
+    margin: auto;
+}
+.paginate .next {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+.paginate a {
+    color: #212121;
 }
 footer {
     max-width: 1200px;
