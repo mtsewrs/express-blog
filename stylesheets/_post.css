@@ -7,7 +7,7 @@
 		    @media screen and (min-width: 600px) {
 		    	.overlay{
 		    		padding-bottom: 48.7%;
-		    		height: inherit;
+		    		max-height: 700px;
 		    	}
 		    }
 		    .overlay{
@@ -15,7 +15,7 @@
 			    background-color: #2C3136;
 			    width: 100%;
 			    padding-bottom: 0%;
-			    height: 100vh;
+			    height: 700px;
 			    z-index: 1;
 			    opacity: 0.9;
 			    text-align: center;

@@ -71,10 +71,10 @@
 	content: '';
 	position: absolute;
 	left: -1px;
-	height: 16px;
+	height: 4px;
 	width: 102%;
 	top: 50%;
-	margin-top: -8px;
+	margin-top: -3px;
 	right: 0;
 	z-index: 2;
 	background: #F9F9F9;

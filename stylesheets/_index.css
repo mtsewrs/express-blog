@@ -80,33 +80,33 @@
 
 .home-main{
 	position: relative;
+	.border{
+		border-left: 1px solid rgba(0, 0, 0, 0.2);
+		margin-left: -15px;
+	}
 	.home-item-content{
-		lost-align: center;
-		margin: auto;
-		height: 250px;
 		width: 100%;
 		img{
 			border-radius: 50%;
 			height: 200px;
 		}
-		h1{
-			text-align: center;
+		h3{
+			text-align: left;
+			font-weight: 300;
 		}
 		p{
 			width: 100%;
 			padding-top: 1.5em;
-			line-height: 1.5;
-			text-align: center;
+			line-height: 2;
+			text-align: left;
+			font-weight: 300;
 		}
 		.icon-container{
 		    display: inline-block;
-		    position: relative;
-		    left: 50%;
-		    transform: translateX(-50%);
 		}
 		span{
 			color: #B6B6B6;
-			font-size: 0.7em;
+			font-size: 0.5em;
 			padding-left: 1em;
 			text-align: center;
 			i{
@@ -115,18 +115,19 @@
 			}
 		}
 		.content{
-			width: 100%;
+			width: 70%;
+			margin: auto;
 		}
 	}
 		.home-item-container{
-			max-width: 1200px;
-			width: 98%;
+			lost-align: center;
+			lost-column: 1/2;
 			height: 600px;
-		    margin: 3em auto;
 		}
 .home-portfolio-container{
 				width: 100%;
 				height: 300px;
+				overflow: auto;
 				.home-portfolio-item{
 					width: 50%;
 					float: left;
