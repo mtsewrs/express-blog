@@ -18,6 +18,7 @@ var MongoClient = require('mongodb').MongoClient;
 var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 var showdown  = require('showdown');
 var processImage = require('express-processimage');
+var device = require('express-device');
 
 
 var converter = new showdown.Converter();
@@ -111,15 +112,18 @@ app.set('view engine', 'ejs');
 app.use(processImage({root: path.join(__dirname, '/public')}))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(paginate.middleware(2, 50));
-//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(device.capture());
 app.use('/static', express.static(path.join(__dirname, '/public')));
 
 app.locals = {
     posts: {}
 };
+
+device.enableDeviceHelpers(app);
+device.enableViewRouting(app);
 
 //Routes
 app.get('/', function(req, res){

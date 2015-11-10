@@ -3,9 +3,20 @@
     height: 100vh;
     min-height: 700px;
     width: 100%;
-	background: url("https://res.cloudinary.com/dputujmih/image/upload/v1444593307/city_bridge_kr5qj8.jpg") center center;
+	background: url("https://unsplash.it/2560/1440?image=869&blur") center center;
 	background-size: cover;
 	position: relative;
+	.overlay{
+	    position: absolute;
+	    background-color: #2C3136;
+	    width: 100%;
+	    padding-bottom: 0%;
+	    height: 100vh;
+	    z-index: 1;
+	    opacity: 0.9;
+	    text-align: center;
+	    z-index: 0;
+	}
 	.home-text{
 		    position: absolute;
 		    left: 50%;
