@@ -15,7 +15,7 @@ var NodeCache = require( "node-cache" );
 var ExpressBrute = require('express-brute');
 var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
-var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
+// var myCache = new NodeCache( { stdTTL: 100, checkperiod: 120 } );
 var showdown  = require('showdown');
 var processImage = require('express-processimage');
 var device = require('express-device');
@@ -115,7 +115,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(device.capture());
-app.use('/static', express.static(path.join(__dirname, '/public'), { maxAge: 86400000 }));
+app.use('/static', express.static(path.join(__dirname, '/public'), { maxAge: 2592000000 }));
 
 app.locals = {
     posts: {}
