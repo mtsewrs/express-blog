@@ -3,7 +3,7 @@
     height: 100vh;
     min-height: 700px;
     width: 100%;
-	background: url("https://unsplash.it/2560/1440?image=869&blur") center center;
+	background: url("/static/images/1440-min.jpeg") center center;
 	background-size: cover;
 	position: relative;
 	.overlay{

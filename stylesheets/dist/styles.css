@@ -34,7 +34,7 @@
 }
 .visible {bottom: 0px;
 }
-.home-splash {height: 100vh;min-height: 700px;width: 100%;background: url("https://unsplash.it/2560/1440?image=869&blur") center center;background-size: cover;position: relative;
+.home-splash {height: 100vh;min-height: 700px;width: 100%;background: url("/static/images/1440-min.jpeg") center center;background-size: cover;position: relative;
 }
 .home-splash .overlay {position: absolute;background-color: #2C3136;width: 100%;padding-bottom: 0%;height: 100vh;z-index: 1;opacity: 0.9;text-align: center;z-index: 0;
 }
