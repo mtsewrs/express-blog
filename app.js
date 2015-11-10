@@ -109,14 +109,13 @@ function requireLogin (req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(processImage({root: path.join(__dirname, '/public')}))
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'), { maxAge: 2592000000 }));
 app.use(paginate.middleware(2, 50));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(device.capture());
-app.use('/static', express.static(path.join(__dirname, '/public')));
+app.use('/static', express.static(path.join(__dirname, '/public'), { maxAge: 86400000 }));
 
 app.locals = {
     posts: {}
