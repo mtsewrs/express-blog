@@ -11,13 +11,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('client-sessions');
 var paginate = require('express-paginate');
-var NodeCache = require( "node-cache" );
+var serveStatic = require('serve-static');
+// var NodeCache = require( "node-cache" );
 var ExpressBrute = require('express-brute');
 var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
-var myCache = new NodeCache();
+// var myCache = new NodeCache();
 var showdown  = require('showdown');
-var processImage = require('express-processimage');
 var device = require('express-device');
 
 
@@ -62,7 +62,6 @@ PostSchema.plugin(require('mongoose-paginate'));
 var Post = mongoose.model('Post', PostSchema);
 
 var app = express();
-app.use(processImage({root: root}))
 app.use(helmet());
 app.use(helmet.noCache({ noEtag: true }));
 app.use(helmet.frameguard());
@@ -109,13 +108,13 @@ function requireLogin (req, res, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'), { maxAge: 2592000000 }));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'), { maxAge: '2592000000' }));
 app.use(paginate.middleware(2, 50));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(device.capture());
-app.use('/static', express.static(path.join(__dirname, '/public'), { maxAge: 2592000000 }));
+app.use('/static', express.static(__dirname + '/public', {maxAge: '2592000000'}));
 
 app.locals = {
     posts: {}
