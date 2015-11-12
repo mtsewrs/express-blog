@@ -1,20 +1,30 @@
 footer{
+	@media screen and (min-width: 600px) {
+		height: 150px;
+	}
 	max-width: 1200px;
 	width: 100%;
 	margin: auto;
 	margin-bottom: 60px;
-	height: 150px;
+	height: 100px;
 	padding: 0em 1em;
 	p{
+		@media screen and (min-width: 600px) {
+			line-height: 150px;
+		}
 		font-weight: 400;
 		float: left;
-		line-height: 150px;
+		line-height: 100px;
 	}
 	a{
+		@media screen and (min-width: 600px) {
+			font-size: 1.5em;
+			line-height: 150px;
+		}
 		color: #212121;
-		font-size: 1.5em;
+		font-size: 1em;
 		padding-left: 1em;
-		line-height: 150px;
+		line-height: 100px;
 	}
 	div{
 		float: right;

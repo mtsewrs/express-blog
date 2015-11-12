@@ -1,7 +1,9 @@
 
 .home-splash{
+	@media screen and (min-width: 600px) {
+		min-height: 700px;
+	}
     height: 100vh;
-    min-height: 700px;
     width: 100%;
 	background: url("/static/images/1440-min.jpeg") center center;
 	background-size: cover;
@@ -25,17 +27,23 @@
 		    max-width: 1200px;
 		    width: 100%;
 		h1{
+			@media screen and (min-width: 600px) {
+				font-size: 4em;
+			}
 			color: white;
-			font-size: 4em;
+			font-size: 2em;
 			text-align: center;
 		}
 		p{
+			@media screen and (min-width: 600px) {
+				font-size: 1.5em;
+			}
 			margin-top: 1em;
 			margin-bottom: 3em;
 			color: white;
 			font-weight: 300;
 			text-align: center;
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 		.resume-container{
 			    position: relative;
@@ -91,6 +99,7 @@
 
 .home-main{
 	position: relative;
+	overflow: auto;
 	.border{
 		border-left: 1px solid rgba(0, 0, 0, 0.2);
 		margin-left: -15px;
@@ -102,14 +111,22 @@
 			height: 200px;
 		}
 		h3{
-			text-align: left;
+			@media screen and (min-width: 600px) {
+				text-align: left;
+				font-size: 1.3em;
+			}
+			text-align: center;
 			font-weight: 300;
+			font-size: 1.8em;
 		}
 		p{
+			@media screen and (min-width: 600px) {
+				text-align: left;
+			}
 			width: 100%;
 			padding-top: 1.5em;
 			line-height: 2;
-			text-align: left;
+			text-align: center;
 			font-weight: 300;
 		}
 		.icon-container{
@@ -131,9 +148,13 @@
 		}
 	}
 		.home-item-container{
+			@media screen and (min-width: 600px) {
+				lost-column: 1/2;
+				height: 600px;
+			}
 			lost-align: center;
-			lost-column: 1/2;
-			height: 600px;
+			lost-column: 1/1;
+			height: 300px;
 		}
 .home-portfolio-container{
 				width: 100%;
@@ -182,4 +203,68 @@
 			    z-index: 1;
 			    transform: translate(0.1%, -50%);
 			}
+}
+
+.atvImg{
+	cursor: pointer;
+}
+
+.projects{
+	@media screen and (min-width: 600px) {
+		height: 500px;
+	}
+	max-width: 1200px;
+	margin: auto;
+	height: 795px;
+	h1{
+		text-align: center;
+		padding: 1em 0em;
+		font-weight: 300;
+	}
+}
+
+.project-card{
+	@media screen and (min-width: 600px) {
+		lost-column: 1/3;
+		margin: 1em 0em;
+		padding-right: 0em;
+	}
+	lost-column: 1/1;
+	margin: 1em 1em;
+	padding-right: 2em;
+	height: 200px;
+	z-index: 0;
+	.atvImg{
+		height: 200px;
+		width: 100%;
+	}
+}
+
+.contact{
+	width: 100%;
+	margin: auto;
+	background-color: #f4f5f7;
+	padding-bottom: 8em;
+	h1{
+		text-align: center;
+		font-weight: 300;
+		padding-top: 2em;
+	}
+	p{
+		font-weight: 300;
+		max-width: 1200px;
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+	a{
+		font-weight: 300;
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		display: inline-block;
+		color: $red;
+		font-size: 2em;
+		padding-top: 1em;
+	}
 }

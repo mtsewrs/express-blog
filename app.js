@@ -11,12 +11,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('client-sessions');
 var paginate = require('express-paginate');
-var serveStatic = require('serve-static');
-// var NodeCache = require( "node-cache" );
 var ExpressBrute = require('express-brute');
 var MongoStore = require('express-brute-mongo');
 var MongoClient = require('mongodb').MongoClient;
-// var myCache = new NodeCache();
 var showdown  = require('showdown');
 var device = require('express-device');
 
@@ -171,7 +168,7 @@ app.post('/dashboard/new', function (req, res) {
   post.save(function (err) {
     if (err) {
       var err = 'Something went wrong';
-      res.render('newpost', {error: error});
+      res.render('newpost', {error: err});
     } else{
       res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
     };
@@ -186,7 +183,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
     if (!post) {
       res.redirect('/dashboard');
     } else{
-      let url = post.image_url.split('');
+      var url = post.image_url.split('');
       var id = url.map(function(word){ if(!isNaN(word)) return word}).join('');
       res.render('edit', {
          post: post,

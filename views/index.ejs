@@ -3,6 +3,7 @@
     <head>
     <title>Home | Mattias Ewers</title>
 	<% include partials/head %>
+    <link rel="stylesheet" href="/static/css/atvImg.css">
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -42,34 +43,25 @@
                         </div>
                 </section>
             </div>
-
-            <div class="home-portfolio-container">
-                <section class="home-portfolio-item">
-                    <div style="width: 100%">
-                        <h3> MATERIAL TODO </h3>
-                        <p>Material design todo app with login</p>
-                    </div>
-                </section>
-                <section class="home-portfolio-item">
-                    <div style="width: 100%">
-                        <h3> Portfolio </h3>
-                        <p>Material design todo app with login</p>
-                    </div>
-                </section>
+        </main>
+        <main class="projects">
+            <h1>Featured Projects</h1>
+            <div>
+                <!-- https://github.com/drewwilson/atvImg -->
+                <% for(var i = 0; i < 3; i++) { %>
+                    <section class="project-card">
+                        <div class="atvImg">
+                           <div class="atvImg-layer" data-img="/static/images/back1.jpg"></div>
+                           <div class="atvImg-layer" id="testid" data-img="/static/images/front<%= i %>.png"></div>
+                        </div>
+                    </section>
+                <% } %>
             </div>
-
-            <div class="home-portfolio-container">
-                <section class="home-portfolio-item item-2">
-                    <div style="width: 100%">
-                        <h3> Other </h3>
-                    </div>
-                </section>
-                <section class="home-portfolio-item item-2">
-                    <div style="width: 100%">
-                        <h3> More </h3>
-                    </div>
-                </section>
-            </div>
+        </main>
+        <main class="contact">
+            <h1>Contact</h1>
+            <p>If you'd like to contact me feel free to do so how ever you want, wether it's via social media or mail, I will always respond. </p>
+            <a href="mailto:mattias.ewers@gmail.com"> mattias.ewers@gmail.com</a>
         </main>
         <% include partials/footer %>
         <script src="/static/js/loadCSS.js"></script>
@@ -83,13 +75,31 @@
 
         <script src="/static/js/noframework.waypoints.min.js"></script>
         <script src="/static/js/script.js"></script>
+        <script src="/static/js/atvImg-min.js"></script>
         <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-59647812-1', 'auto');
-        ga('send', 'pageview');
+            atvImg();
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var atv = document.getElementById("atvImg__0");
+                var atv1 = document.getElementById("atvImg__1");
+                var atv2 = document.getElementById("atvImg__2");
+                atv.addEventListener("click", function(){
+                    window.location.href = 'https://github.com/mattiasewers/material-api';
+                });
+                atv1.addEventListener("click", function(){
+                    window.location.href = 'https://github.com/mattiasewers/express-blog';
+                });
+                atv2.addEventListener("click", function(){
+                    window.location.href = '/blog';
+                });
+            });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-59647812-1', 'auto');
+            ga('send', 'pageview');
         </script>
     </body>
 </html>
