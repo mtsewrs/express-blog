@@ -209,7 +209,7 @@
 @media screen and (min-width: 600px) {
     .post-container .post-header {max-height: 700px;
     }
-    .post-container .post-header .overlay {padding-bottom: 48.7%;max-height: 700px;
+    .post-container .post-header .overlay {max-height: 700px;
     }
     .post-container .post-header .hero-img {max-height: 700px;
     }
