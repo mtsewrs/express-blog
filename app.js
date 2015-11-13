@@ -59,6 +59,7 @@ PostSchema.plugin(require('mongoose-paginate'));
 var Post = mongoose.model('Post', PostSchema);
 
 var app = express();
+app.set('trust proxy', true);
 app.use(helmet());
 app.use(helmet.noCache({ noEtag: true }));
 app.use(helmet.frameguard());
