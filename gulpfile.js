@@ -4,6 +4,7 @@ var autoprefixer = require('autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var eslint = require('gulp-eslint');
+var concat = require('gulp-concat');
 
 gulp.task('css', function () {
     var processors = [
@@ -22,6 +23,18 @@ gulp.task('minify-css', function() {
   return gulp.src('./stylesheets/dist/styles.css')
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('./public/css/'));
+});
+
+gulp.task('compress', function() {
+  return gulp.src('./public/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/js/'));
+});
+
+gulp.task('concat', function() {
+  return gulp.src('./public/js/*.js')
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('./public/js/'));
 });
 
 gulp.task('lint', function () {
@@ -43,3 +56,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', [ 'css', 'minify-css', 'watch']);
+gulp.task('js', [ 'compress', 'concat']);
