@@ -230,8 +230,8 @@
 		padding-right: 0em;
 	}
 	lost-column: 1/1;
-	margin: 1em 1em;
-	padding-right: 3em;
+	margin: 1em 0em;
+	padding: 0em 1em;
 	height: 200px;
 	z-index: 0;
 	.atvImg{
