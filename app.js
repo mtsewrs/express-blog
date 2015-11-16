@@ -156,7 +156,7 @@ app.get('/dashboard/new', requireLogin, function (req, res) {
   res.render('newpost');
 });
 
-app.post('/dashboard/new', function (req, res) {
+app.post('/dashboard/new', requireLogin, function (req, res) {
   var post = new Post({
     title: req.body.title,
     url: req.body.title.replace(/\s+/g, ''),
@@ -180,7 +180,7 @@ app.post('/dashboard/new', function (req, res) {
 
 
 app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
-  Post.findOne({url: req.params.id}, function (err, post) {
+  Post.findOne({_id: req.params.id}, function (err, post) {
     if (!post) {
       res.redirect('/dashboard');
     } else{
@@ -196,7 +196,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
   });
 });
 
-app.post('/dashboard/edit/:id', function (req, res) {
+app.post('/dashboard/edit/:id', requireLogin, function (req, res) {
   var updates = {
     url: req.body.title.replace(/\s+/g, ''),
     title:  req.body.title.trim(),
@@ -205,7 +205,7 @@ app.post('/dashboard/edit/:id', function (req, res) {
     image_url: `https://unsplash.it/1080/720?image=${req.body.url}`,
     image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
   };
-  Post.findOneAndUpdate({url: req.body.title.replace(/\s+/g, '')}, updates, { runValidators: true }, function(err) {
+  Post.findOneAndUpdate({_id: req.params.id}, updates, { runValidators: true }, function(err) {
     res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
   });
 });
