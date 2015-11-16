@@ -206,7 +206,11 @@ app.post('/dashboard/edit/:id', requireLogin, function (req, res) {
     image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
   };
   Post.findOneAndUpdate({_id: req.params.id}, updates, { runValidators: true }, function(err) {
-    res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
+    if(err) {
+      alert(err)
+    } else{
+      res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
+    };
   });
 });
 

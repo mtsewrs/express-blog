@@ -354,7 +354,7 @@
 }
 .blog .blog-container div {width: 65%;
 }
-.blog .blog-container figure {position: relative;height: 200px;overflow: hidden;background-color: white;z-index: 100;
+.blog .blog-container figure {position: relative;height: 200px;overflow: hidden;background-color: white;
 }
 .blog .blog-container figure:hover img {-webkit-transform: scale3d(1,1,1);transform: scale3d(1,1,1);opacity: 1;
 }
