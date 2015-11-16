@@ -188,7 +188,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
       var id = url.map(function(word){ if(!isNaN(word)) return word}).join('');
       res.render('edit', {
          post: post,
-         tags: post.tags.join(' '),
+         tags: post.tags,
          url: id.substr(id.length - 3)
       });
     };
@@ -201,11 +201,11 @@ app.post('/dashboard/edit/:id', function (req, res) {
     url: req.body.title.replace(/\s+/g, ''),
     title:  req.body.title.trim(),
     body: req.body.body,
-    tags: req.body.tags.split(' '),
+    tags: req.body.tags,
     image_url: `https://unsplash.it/1080/720?image=${req.body.url}`,
     image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
   };
-  Post.findOneAndUpdate({}, updates, { runValidators: true }, function(err) {
+  Post.findOneAndUpdate({url: req.body.title.replace(/\s+/g, '')}, updates, { runValidators: true }, function(err) {
     res.redirect('/blog/' + req.body.title.replace(/\s+/g, ''));
   });
 });
