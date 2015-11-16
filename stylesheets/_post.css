@@ -40,7 +40,6 @@
 				text-align: center;
 				font-weight: normal;
 				color: white;
-				text-transform: uppercase;
 				vertical-align: middle;
 				top: 50%;
     			transform: translateY(-50%);
@@ -84,8 +83,20 @@
 		h2{
 			padding-bottom: 1em;
 		}
+		.pre-full{
+		    min-width: 100vw;
+		    width: 100%;
+		    position: relative;
+		    left: 50%;
+		    transform: translateX(-50%);
+		    background-color: #2C3136;
+		    padding: 2em 0em;
+		    margin: 1em 0em;
+		}
 		pre{
-			width: 100%;
+			width: 800px;
+			margin: auto;
+			background-color: #2C3136;
 		}
 	}
 }

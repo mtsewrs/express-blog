@@ -19,11 +19,10 @@
 			</div>
 		</div>
 
-        <div class="blog">
+        <div class="blog" style=<%- posts.length < 2 ? "height:376px" : " " %>>
         			<% for(var i = 0; i < posts.length; i++) { %>
 			   		<section class="blog-container">
 		              <figure class="has-light-mask m-b-0 image-effect">
-		              	<!-- Hero image HERE! -->
 		                <img src="<%= posts[i].image_url %>" alt="Article image">
 		              </figure>
 			   		</section>
@@ -35,7 +34,7 @@
 									    <% for(var l = 0; l  < 1; l++) {%>
 									    	<p class="fa fa-tags"><%= posts[i].tags[l] %></p>
 									    <% } %>
-									    <p class="fa fa-clock-o"><%= posts[i].time.toDateString() %></p>
+									    <p class="fa fa-clock-o"><%= posts[i].time.toISOString().substring(0, 10) %></p>
 								    </a>
 							     </div>
 					</section>
@@ -44,6 +43,7 @@
 
 
 		<% include partials/paginate %>
+
         <% include partials/footer %>
         <script src="/static/js/loadCSS.js"></script>
         <script>

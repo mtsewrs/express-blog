@@ -2,12 +2,12 @@
                     <ul class="paginate">
                     <% if (paginate.hasNextPages( pageCount )) { %>
                             <li class="next">
-                                <a href="/blog?page=<%= req.query.page += 1 %>">Next</a>
+                                <a href="/blog?page=<%- page =  req.query.page + 1 %>">Next</a>
                             </li>
                     <% } %>
                     <% if (paginate.hasPreviousPages) { %>
                             <li class="prev">
-                                <a href="/blog?page=<%= req.query.page -= 1%>">Previous</a>
+                                <a href="<%- paginate.href(true) %>">Previous</a>
                             </li>
                     <% } %>
                     </ul>

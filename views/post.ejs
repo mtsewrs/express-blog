@@ -17,7 +17,7 @@
             <div class="post-header">
             <div class="overlay"></div>
                <img class="hero-img" src="<%= post.image_url_large %>" alt="image post header">
-                <span> <%= post.time.toDateString() %></span>
+                <span> <%= post.time.toISOString().substring(0, 10) %></span>
                 <h1 id="waypoint"><%= post.title %></h1>
               <div class="blog-header">
                 <% include partials/header %>

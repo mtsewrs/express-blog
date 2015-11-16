@@ -235,7 +235,7 @@ app.get('/blog', function(req, res, next){
   Post.paginate({}, { page: req.query.page, limit: req.query.limit }, function(err, posts, pageCount, itemCount) {
 
     if (err) return next(err);
-
+    var page = 0;
     res.format({
       html: function() {
         res.render('blog', {
@@ -243,6 +243,7 @@ app.get('/blog', function(req, res, next){
           pageCount: pageCount,
           itemCount: itemCount,
           req: req,
+          page: page,
           url: 'blog'
         });
       },

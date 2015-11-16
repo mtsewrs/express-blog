@@ -28,22 +28,22 @@
             <section class="sidebar">
             <form method="post" >
                 <div class="group">
-                    <textarea type="text" name="title" placeholder="Title"> <%= post.title %> </textarea>
+                    <textarea type="text" name="title" placeholder="Title" rows="2" cols="80"> <%= post.title %> </textarea>
                 </div>
 
                 <div class="body">
-                    <textarea type="text" name="body" placeholder="Text..." rows="10" cols="50"><%= post.body %></textarea>
+                    <textarea type="text" name="body" placeholder="Text..." rows="10" cols="80"><%= post.body %></textarea>
                 </div>
 
                 <div class="body">
-                    <textarea type="text" name="tags" placeholder="Text..." rows="10" cols="50"><%= tags %></textarea>
+                    <textarea type="text" name="tags" placeholder="Text..." rows="2" cols="80"><%= tags %></textarea>
                 </div>
 
                 <div class="group">
-                    <textarea type="text" name="url" placeholder="Text..." rows="10" cols="50"><%= url %></textarea>
+                    <textarea type="text" name="url" placeholder="Text..." rows="2" cols="80"><%= url %></textarea>
                 </div>
                 <div class="group">
-                    <textarea type="text" name="url_large" placeholder="Text..." rows="10" cols="50"><%= url %></textarea>
+                    <textarea type="text" name="url_large" placeholder="Text..." rows="2" cols="80"><%= url %></textarea>
                 </div>
                 <button type="submit" value="Submit">Submit</button>
             </form>
