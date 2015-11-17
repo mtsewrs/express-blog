@@ -204,7 +204,7 @@
 }
 .post-container .post-body-container h2 {padding-bottom: 1em;
 }
-.post-container .post-body-container .pre-full {min-width: 100vw;width: 100%;position: relative;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);background-color: #2C3136;padding: 2em 0em;margin: 1em 0em;
+.post-container .post-body-container .pre-full {min-width: 100vw;width: 100%;position: relative;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);background-color: #2C3136;padding: 4em 0em;margin: 1em 0em;overflow: auto;
 }
 .post-container .post-body-container pre {width: 800px;margin: auto;background-color: #2C3136;
 }

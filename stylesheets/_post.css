@@ -69,8 +69,9 @@
 		    left: 50%;
 		    transform: translateX(-50%);
 		    background-color: #2C3136;
-		    padding: 2em 0em;
+		    padding: 4em 0em;
 		    margin: 1em 0em;
+		    overflow: auto;
 		}
 		pre{
 			width: 800px;
