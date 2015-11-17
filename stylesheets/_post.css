@@ -4,17 +4,6 @@
 		.post-header{
 		    width: 100%;
 		    height: 100vh;
-		    @media screen and (min-width: 600px) {
-
-				max-height: 700px;
-
-		    	.overlay{
-		    		max-height: 700px;
-		    	}
-		    	.hero-img{
-					max-height: 700px;
-		    	}
-		    }
 		    .overlay{
 			    position: absolute;
 			    background-color: #2C3136;
@@ -32,11 +21,6 @@
 		    	object-fit:cover;
 		    }
 			h1{
-				@media screen and (min-width: 600px) {
-					line-height: 700px;
-				    top: 0%;
-				    transform: translateY(0%);
-				}
 				text-align: center;
 				font-weight: normal;
 				color: white;
@@ -48,11 +32,6 @@
 				z-index: 1;
 			}
 			span{
-				@media screen and (min-width: 600px) {
-				    top: 0%;
-				    transform: translateY(0px);
-				    line-height: calc(700px - 5em);
-				}
 				text-align: center;
 				display: block;
 				font-size: 0.8em;
@@ -61,7 +40,7 @@
 				width: 100%;
 				z-index: 1;
 			    top: 50%;
-			    transform: translateY(calc(-50% - 5em));
+			    transform: translateY(calc(-50% - 3em));
 			}
 		}
 	.post-body-container{

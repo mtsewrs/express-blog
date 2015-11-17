@@ -194,7 +194,7 @@
 }
 .post-container .post-header h1 {text-align: center;font-weight: normal;color: white;vertical-align: middle;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);position: absolute;width: 100%;z-index: 1;
 }
-.post-container .post-header span {text-align: center;display: block;font-size: 0.8em;color: rgba(255, 255, 255, 0.6);position: absolute;width: 100%;z-index: 1;top: 50%;-webkit-transform: translateY(calc(-50% - 5em));transform: translateY(calc(-50% - 5em));
+.post-container .post-header span {text-align: center;display: block;font-size: 0.8em;color: rgba(255, 255, 255, 0.6);position: absolute;width: 100%;z-index: 1;top: 50%;-webkit-transform: translateY(calc(-50% - 3em));transform: translateY(calc(-50% - 3em));
 }
 .post-container .post-body-container {max-width: 800px;width: 100%;margin: auto;margin-top: 3em;padding-left: 1em;padding-right: 1em;
 }
@@ -207,22 +207,6 @@
 .post-container .post-body-container .pre-full {min-width: 100vw;width: 100%;position: relative;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);background-color: #2C3136;padding: 2em 0em;margin: 1em 0em;
 }
 .post-container .post-body-container pre {width: 800px;margin: auto;background-color: #2C3136;
-}
-@media screen and (min-width: 600px) {
-    .post-container .post-header {max-height: 700px;
-    }
-    .post-container .post-header .overlay {max-height: 700px;
-    }
-    .post-container .post-header .hero-img {max-height: 700px;
-    }
-}
-@media screen and (min-width: 600px) {
-    .post-container .post-header h1 {line-height: 700px;top: 0%;-webkit-transform: translateY(0%);transform: translateY(0%);
-    }
-}
-@media screen and (min-width: 600px) {
-    .post-container .post-header span {top: 0%;-webkit-transform: translateY(0px);transform: translateY(0px);line-height: calc(700px - 5em);
-    }
 }
 .disqus {max-width: 1200px;width: 100%;margin: auto;padding-left: 1em;padding-right: 1em;
 }
