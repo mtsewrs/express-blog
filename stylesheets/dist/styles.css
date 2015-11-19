@@ -304,7 +304,7 @@
 }
 .sidebar-container .sidebar .sidebar-stats p {text-align: center;
 }
-.sidebar-container .sidebar .sidebar-stats p a {margin-bottom: 1em;display: inline-block;padding: 1em 2em;border: 2px solid #FF5252;color: #3e454c;
+.sidebar-container .sidebar .sidebar-stats p a {margin-bottom: 1em;display: inline-block;padding: 1em 2em;border: 2px solid #FF5252;border-radius: 30px;color: #3e454c;
 }
 .blog-header {position: relative;width: 100%;z-index: 1;padding: 1em;
 }

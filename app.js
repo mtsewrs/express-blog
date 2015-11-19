@@ -138,7 +138,9 @@ app.get('/login', function(req, res){
 });
 
 app.get('/dashboard', requireLogin, function(req, res){
-  Post.find({}).sort({time: -1}).exec(function(err, posts) {
+  Post.find( { createdOn: { $lte: req.createdOnBefore } } )
+.limit( 10 )
+.sort( '-time' ).exec(function(err, posts) {
     if (!posts){
       res.render('dashboard', {
          posts: {title: 'no posts'}
@@ -236,7 +238,7 @@ app.get('/logout', function(req, res){
 
 app.get('/blog', function(req, res, next){
 
-  Post.paginate({}, { page: req.query.page, limit: req.query.limit }, function(err, posts, pageCount, itemCount) {
+  Post.paginate({},{ page: req.query.page, limit: req.query.limit, sortBy : { time: -1 } }, function(err, posts, pageCount, itemCount) {
 
     if (err) return next(err);
     var page = 0;
