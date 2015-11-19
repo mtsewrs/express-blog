@@ -190,6 +190,8 @@
 }
 .post-container .post-body-container pre {width: 800px;margin: auto;background-color: #2C3136;
 }
+.post-container .post-body-container code {font: 1em 'inconsolata', menlo, consolas, monospaced;
+}
 .disqus {max-width: 1200px;width: 100%;margin: auto;padding-left: 1em;padding-right: 1em;
 }
 .header {max-width: 1200px;margin: auto;height: 122px;
