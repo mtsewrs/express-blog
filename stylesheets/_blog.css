@@ -36,6 +36,7 @@ height: 752px;
 			}
 			h3{
 				font-size: 1.3em;
+				font-weight: 300;
 			}
 			&:nth-child(3){
 				float: right;

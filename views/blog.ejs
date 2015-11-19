@@ -28,7 +28,9 @@
 			   		</section>
 					<section class="blog-container">
 					   			<div>
-					   				<span> New </span>
+					   				<% if(i === 0 && req.query.page <= 1) { %>
+										<span> new </span>
+					   				<% } %>
 					   				<a href="/blog/<%= posts[i].url %>">
 									    <h3> <%= posts[i].title %><i class="fa fa-angle-right"></i></h3>
 									    <% for(var l = 0; l  < 1; l++) {%>

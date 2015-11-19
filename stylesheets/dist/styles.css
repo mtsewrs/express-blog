@@ -353,7 +353,7 @@
     }
     .blog .blog-container figure {height: 376px;
     }
-    .blog .blog-container h3 {font-size: 1.3em;
+    .blog .blog-container h3 {font-size: 1.3em;font-weight: 300;
     }
     .blog .blog-container:nth-child(3) {float: right;
     }
