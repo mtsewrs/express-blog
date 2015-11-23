@@ -60,6 +60,19 @@ a {
 p, span{
 	font-size: 0.8em;
 }
+
+button{
+	height: 50px;
+	width: 130px;
+	background-color: #212121;
+	border-bottom-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	color: white;
+	font-size: 1em;
+}
+
 form textarea[type=text],
 form input[type=password] {
   margin-bottom: 10px;

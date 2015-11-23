@@ -190,7 +190,7 @@ app.get('/dashboard/edit/:id', requireLogin, function (req, res) {
       var id = url.map(function(word){ if(!isNaN(word)) return word}).join('');
       res.render('edit', {
          post: post,
-         tags: post.tags,
+         tags: post.tags.join(' '),
          url: id.substr(id.length - 3)
       });
     };
@@ -203,7 +203,7 @@ app.post('/dashboard/edit/:id', requireLogin, function (req, res) {
     url: req.body.title.replace(/\s+/g, ''),
     title:  req.body.title.trim(),
     body: req.body.body,
-    tags: req.body.tags,
+    tags: req.body.tags.split(' '),
     image_url: `https://unsplash.it/1080/720?image=${req.body.url}`,
     image_url_large: `https://unsplash.it/2560/1246?image=${req.body.url_large}`
   };

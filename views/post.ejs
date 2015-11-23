@@ -19,6 +19,7 @@
                <img class="hero-img" src="<%= post.image_url_large %>" alt="image post header">
                 <span> <%= post.time.toISOString().substring(0, 10) %></span>
                 <h1 id="waypoint"><%= post.title %></h1>
+                <p> <%= post.tags.join(' ') %></p>
               <div class="blog-header">
                 <% include partials/header %>
               </div>

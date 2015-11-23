@@ -74,9 +74,7 @@
 }
 .home-main {position: relative;overflow: auto;max-width: 1200px;width: 100%;margin: auto;
 }
-.home-main .border {border-left: 1px solid rgba(0, 0, 0, 0.2);margin-left: -15px;padding-left: 4em;padding-right: 0em!important;
-}
-.home-main .home-item-content {width: 100%;padding-right: 3em;
+.home-main .home-item-content {width: 100%;padding: 3em;
 }
 .home-main .home-item-content img {border-radius: 50%;height: 200px;
 }
@@ -92,6 +90,8 @@
 }
 .home-main .home-item-content .content {margin: auto;
 }
+.home-main .border {border-left: 1px solid rgba(0, 0, 0, 0.2);padding: 0em 3em;
+}
 .home-main .home-item-container {position: relative;width: calc(99.99% * 1/1 - (30px - 30px * 1/1));height: 300px;
 }
 .home-main .home-item-container:nth-child(n) {float: left;margin-right: 30px;clear: none;
@@ -105,11 +105,19 @@
 .home-main .home-item-container > * {position: absolute;top: 50%;right: auto;bottom: auto;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 600px) {
+    .home-main .home-item-content {padding-right: 3em;padding-left: 0em;
+    }
+}
+@media screen and (min-width: 600px) {
     .home-main .home-item-content h3 {text-align: left;font-size: 1.3em;
     }
 }
 @media screen and (min-width: 600px) {
     .home-main .home-item-content p {text-align: left;
+    }
+}
+@media screen and (min-width: 600px) {
+    .home-main .border {padding-left: 4em;margin-left: -15px;padding-right: 0em;
     }
 }
 @media screen and (min-width: 600px) {
@@ -185,6 +193,8 @@
 .post-container .post-body-container h1 {padding-bottom: 1em;
 }
 .post-container .post-body-container h2 {padding-bottom: 1em;
+}
+.post-container .post-body-container h3 {padding-bottom: 1em;
 }
 .post-container .post-body-container .pre-full {min-width: 100vw;width: 100%;position: relative;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);background-color: #2C3136;padding: 4em 0em;margin: 1em 0em;overflow: auto;
 }
@@ -419,6 +429,8 @@ li {list-style: none;
 a {text-decoration: none;color: white;font-size: 0.8em;
 }
 p, span {font-size: 0.8em;
+}
+button {height: 50px;width: 130px;background-color: #212121;border-bottom-style: none;border-right-style: none;border-left-style: none;border-top-style: none;color: white;font-size: 1em;
 }
 form textarea[type=text], form input[type=password] {margin-bottom: 10px;padding-top: 15px;padding-left: 15px;background: #212121;border: none;color: white;outline: none;font-size: 1em;
 }
