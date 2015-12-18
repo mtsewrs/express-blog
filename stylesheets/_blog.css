@@ -51,6 +51,10 @@ height: 752px;
 		lost-align: center;
 		height: 200px;
 		background-color: #2c3136;
+		&:hover .image-effect > img {
+			transform: scale3d(1,1,1);
+			opacity: 1;
+		}
 		div{
 			width: 65%;
 		}
@@ -59,7 +63,7 @@ height: 752px;
 			height: 200px;
 			overflow: hidden;
 			background-color: white;
-			&:hover img{
+			&:hover img {
 				transform: scale3d(1,1,1);
 				opacity: 1;
 			}
