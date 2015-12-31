@@ -43,6 +43,15 @@
         </div>
 
         <% include partials/footer %>
+        <script type='application/javascript' src='/static/js/fastclick.js'></script>
+        <script>
+          if ('addEventListener' in document) {
+              document.addEventListener('DOMContentLoaded', function() {
+                var attachFastClick = Origami.fastclick;
+                attachFastClick(document.body);
+              }, false);
+          }
+        </script>
         <script src="/static/js/loadCSS.js"></script>
         <script>
           // load a file
